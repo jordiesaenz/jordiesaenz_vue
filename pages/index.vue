@@ -1,7 +1,11 @@
 <template>
   <section class="container">
     <div>
-      <app-logo/>
+      <youtube :video-id="videoId" ref="youtube" @playing="playing"></youtube>
+      <div>
+        <img v-img:gallery src="https://f4.bcbits.com/img/a1816288509_2.jpg">
+        <img v-img:gallery src="https://f4.bcbits.com/img/a1822940490_2.jpg">
+      </div>
       <h1 class="title">
         jordiesaenz
       </h1>
@@ -23,11 +27,24 @@
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-
 export default {
-  components: {
-    AppLogo
+  data() {
+    return {
+      videoId: 'Xcq3Xrg7B8o'
+    }
+  },
+  methods: {
+    playVideo() {
+      this.player.playVideo()
+    },
+    playing() {
+      console.log('\o/ we are watching!!!')
+    }
+  },
+  computed: {
+    player () {
+      return this.$refs.youtube.player
+    }
   }
 }
 </script>
