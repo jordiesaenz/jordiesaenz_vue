@@ -1,36 +1,45 @@
 <template>
   <section class="container">
-    <div>
-      <youtube :video-id="videoId" ref="youtube" @playing="playing"></youtube>
-      <div>
-        <img v-img:gallery src="https://f4.bcbits.com/img/a1816288509_2.jpg">
-        <img v-img:gallery src="https://f4.bcbits.com/img/a1822940490_2.jpg">
+    <header-unit/>
+    <p>I'm a music guy.</p>
+    <div class="grid">
+      <div class="col-md-1-2 col-xs-1-1">
+        <div class="video-embed">
+          <youtube :video-id="videoId" ref="youtube" @playing="playing"></youtube>
+        </div>
       </div>
-      <h1 class="title">
-        jordiesaenz
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+      <div class="col-md-1-2 col-xs-1-1">
+        <div class="video-embed">
+          <iframe src="https://open.spotify.com/embed?uri=spotify:user:1214932815:playlist:0t2M8LKvOwwmKS7GxGOORt" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
       </div>
+    </div>
+    <div class="image-gallery grid">
+      <img v-for="image in images" :key="image"
+           class="col-md-1-3 col-sm-1-2 col-xs-1-1 image-gallery--image img-responsive"
+           v-img:gallery :src="image.src" :alt="image.alt"
+           :add-label="image.alt" />
     </div>
   </section>
 </template>
 
 <script>
+import HeaderUnit from '~/components/HeaderUnit.vue'
+
 export default {
+  components: {
+    HeaderUnit
+  },
   data() {
     return {
-      videoId: 'Xcq3Xrg7B8o'
+      videoId: 'Xcq3Xrg7B8o',
+      images: [
+        { alt: "1.22.2018 Wayfarer, Costa Mesa, CA | Photo by Emily Saenz", src: require("~/assets/images/gallery/1.jpg") },
+        { alt: "2.26.2018 Northside Vinyl, Long Beach, CA | Photo by Kesler Ottley", src: require("~/assets/images/gallery/2.jpg") },
+        { alt: "1.22.2018 Wayfarer, Costa Mesa, CA | Photo by Emily Saenz", src: require("~/assets/images/gallery/3.jpg") },
+        { alt: "2.26.2018 Northside Vinyl, Long Beach, CA | Photo by Kesler Ottley", src: require("~/assets/images/gallery/4.jpg") },
+        { alt: "1.22.2018 Wayfarer, Costa Mesa, CA | Photo by Emily Saenz", src: require("~/assets/images/gallery/5.jpg") },
+      ]
     }
   },
   methods: {
@@ -48,34 +57,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

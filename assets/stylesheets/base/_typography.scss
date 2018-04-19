@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i|Poppins:400,400i,700,700i,900,900i');
+
+@mixin font-size($value) {
+  font-size: ((($value / ($value * 0 + 1)) / 16 * 1) * 62.5%);
+}
+
+
+html {
+  @include font-size(16px);
+  color: $black;
+  @media (max-width: $sm-max) {
+    @include font-size(14px);
+  }
+}
+
+body {
+  font-family: $sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: $sans-serif; font-weight: 900; color: $white; }
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, a { margin: 0; }
+
+h1 { font-size: 3.2rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 2.2rem; }
+h4 { font-size: 1.8rem; }
+h5 { font-size: 1.6rem; }
+h6 { font-size: 1.4rem; }
+p, a, ol, ul, li, pre {
+  font-size: 1.6rem; font-weight: 300;
+}
+
+ul, ol {
+  font-family: $serif;
+  margin-top: unit(0.5);
+  margin-left: unit(2);
+}
+
+p {
+  color: $white-80;
+  font-family: $serif;
+  &:not(:first-child) { margin-top: unit(1); }
+}
+
+blockquote {
+  font-family: $serif;
+  font-style: italic;
+  margin-left: unit(2);
+}
+
+strong {
+  font-weight: 700;
+}
+
+hr {
+  width: 200px;
+  display: inline-block;
+  text-align: left;
+}
+
+a {
+  color: $white;
+  display: inline-block;
+  font-family: $sans-serif;
+  text-decoration: none;
+  word-break: break-word;
+  word-wrap: break-word;
+  &:hover, &:focus, &:active { color: lighten($pink, 12.5%) }
+}
+
+.serif { font-family: $serif; }
+.sans-serif { font-family: $sans-serif; }

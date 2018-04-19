@@ -1,0 +1,9 @@
+.image-gallery {
+  height: 200px;
+  overflow: hidden;
+  word-break: keep-all;
+  &--image {
+    height: 100%;
+    width: auto;
+  }
+}

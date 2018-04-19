@@ -1,0 +1,9 @@
+.title {
+  font-size: 2.6rem;
+}
+
+@media (max-width: $xs-max) {
+  .title {
+    font-size: 2rem;
+  }
+}

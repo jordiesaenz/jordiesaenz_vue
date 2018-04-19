@@ -3,12 +3,17 @@ module.exports = {
   css: [
     '@/assets/stylesheets/application.scss'
   ],
+  sassLoader: {
+    includePaths: [
+      require('path').resolve(__dirname, 'node_modules')
+    ]
+  },
   modules: [
     '@nuxtjs/blog'
   ],
   plugins: [
-    '~/plugins/vue-youtube',
-    '~/plugins/vue-image'
+    '~/plugins/vue-image',
+    '~/plugins/vue-youtube'
   ],
   head: {
     title: 'Jordie Saenz',
@@ -28,7 +33,7 @@ module.exports = {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
-          test: /\.(js|vue)$/,
+          test: /\.(js|vue|mp3)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })

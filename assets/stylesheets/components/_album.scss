@@ -1,0 +1,10 @@
+.lyrics {
+  background-color: $black-80;
+  box-sizing: border-box;
+  @include position(absolute, -20px null null calc(-100% -20px));
+  height: 100%;
+  overflow: scroll;
+  padding: 30px;
+  width: 100%;
+  margin-top: 20px
+}
