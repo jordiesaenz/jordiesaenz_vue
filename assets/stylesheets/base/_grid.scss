@@ -5,7 +5,7 @@
 $flex-enabled: true;
 $align-items: stretch; // flex-start | flex-end | center | baseline | stretch
 $align-content: space-between; // flex-start | flex-end | center | space-between | space-around | stretch
-$justify-content: flex-start; // flex-start | flex-end | center | space-between | space-around
+$justify-content: center; // flex-start | flex-end | center | space-between | space-around
 $flex-direction: row; // row (ltr) | row-reverse (rtl) | column (ttb) | column-reverse (btt)
 $flex-wrap: wrap; // nowrap (default; all items on one line) | wrap | wrap-reverse
 
@@ -100,11 +100,18 @@ $prop: "width" "margin-left" "left" "right";
 }
 
 // Align-Self Utility Classes
-.as-flex-start  { align-self: flex-start; }
-.as-flex-end    { align-self: flex-end; }
-.as-baseline    { align-self: baseline; }
-.as-center      { align-self: center; }
-.as-stretch     { align-self: stretch; }
+.as-flex-start                  { align-self: flex-start; }
+.as-flex-end                    { align-self: flex-end; }
+.as-baseline                    { align-self: baseline; }
+.as-center                      { align-self: center; }
+.as-stretch                     { align-self: stretch; }
+
+// Justify-Conent Utility Classes
+.justify-content-start          { justify-content: flex-start; }
+.justify-content-end            { justify-content: flex-start; }
+.justify-content-center         { justify-content: center; }
+.justify-content-space-around   { justify-content: space-around; }
+.justify-content-space-between  { justify-content: space-between; }
 
 // Generator
 @each $breakpoint, $min-width in $breakpoints {

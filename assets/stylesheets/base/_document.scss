@@ -9,10 +9,11 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  @include transition(all 0.4s);;
 }
 
 section {
-  @include padding(unit(2) null);
+  @include padding(unit(1) null);
 }
 
 .panel {

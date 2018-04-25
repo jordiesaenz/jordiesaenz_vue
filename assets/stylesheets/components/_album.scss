@@ -1,10 +1,35 @@
-.lyrics {
-  background-color: $black-80;
-  box-sizing: border-box;
-  @include position(absolute, -20px null null calc(-100% -20px));
-  height: 100%;
-  overflow: scroll;
-  padding: 30px;
-  width: 100%;
-  margin-top: 20px
+.album {
+  &--title {
+    font-size: 20px;
+  }
+  &--release-date {
+    font-size: 12px;
+  }
+  &--links {
+    margin-bottom: unit(1);
+    .album-link {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+  }
+  .lyrics {
+    background-color: $black-80;
+    box-sizing: border-box;
+    @include position(absolute, -20px null null calc(-100% -20px));
+    height: 100%;
+    overflow: scroll;
+    padding: 30px;
+    width: 100%;
+    margin-top: 20px
+  }
+}
+
+html.light .album {
+  .lyrics {
+    background-color: $white-80;
+  }
+}
+
+@media (max-width: $sm-max) {
+  .lyrics { display: none; }
 }

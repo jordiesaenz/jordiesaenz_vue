@@ -40,7 +40,7 @@ ul, ol {
 p {
   color: $white-80;
   font-family: $serif;
-  &:not(:first-child) { margin-top: unit(1); }
+  margin-bottom: unit(0.5);
 }
 
 blockquote {
@@ -71,3 +71,10 @@ a {
 
 .serif { font-family: $serif; }
 .sans-serif { font-family: $sans-serif; }
+
+html.light {
+  h1, h2, h3, h4, h5, h6, p, a { color: $black-80; }
+  a {
+    &:hover, &:focus, &:active { color: lighten($pink, 12.5%) }
+  }
+}

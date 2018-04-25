@@ -1,9 +1,13 @@
-.title {
-  font-size: 2.6rem;
-}
-
-@media (max-width: $xs-max) {
+header {
+  li {
+    list-style-type: none;
+  }
   .title {
-    font-size: 2rem;
+    font-size: 2.6rem;
+  }
+  @media (max-width: $xs-max) {
+    .title {
+      font-size: 2rem;
+    }
   }
 }
